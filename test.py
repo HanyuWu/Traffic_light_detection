@@ -8,6 +8,7 @@ from PIL import ImageFont
 import time
 from scipy.stats import norm
 import matplotlib
+import scipy
 
 def filter_boxes(min_score, boxes, scores, classes):
     """Return boxes with a confidence >= `min_score`"""
@@ -125,7 +126,7 @@ def main():
         plt.axis('off')
         plt.imshow(image) 
         pix = np.array(image)
-        print(pix.shape)
+        scipy.misc.imsave('outfile.jpg', pix)
 
 if __name__ == "__main__":
     main()
